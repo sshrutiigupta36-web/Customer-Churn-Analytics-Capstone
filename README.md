@@ -36,6 +36,7 @@ Customer-Churn-Analytics-Capstone/
 5. **Inference Testing:** Reloads `models/trained_pipeline.pkl` and tests predictions on sample rows.
 
 ## How to Execute
-1. Clone the repository: (git clone https://github.com/sshrutiigupta36-web/Customer-Churn-Analytics-Capstone.git)
-2. Install required dependencies: (pip install -r requirements.txt)
-3. Open and run (notebooks/Customer_Churn_Analytics_Capstone.ipynb) in Google Colab or Jupyter Notebook.
+1. Clone the [repository](https://github.com/sshrutiigupta36-web/Customer-Churn-Analytics-Capstone) using:
+   `git clone https://github.com/sshrutiigupta36-web/Customer-Churn-Analytics-Capstone.git`
+2. Install required dependencies: `pip install -r requirements.txt`
+3. Open and run [Customer_Churn_Analytics_Capstone.ipynb](notebooks/Customer_Churn_Analytics_Capstone.ipynb) in Google Colab or Jupyter Notebook (run it from the repository root so the `data/` folder is found).
