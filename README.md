@@ -2,37 +2,40 @@
 
 **Submitted By:** Shruti Gupta  
 **Roll Number:** 2601201028  
-**GitHub Profile:** [sshrutiigupta36-web](https://github.com/sshrutiigupta36-web)
-
----
+**GitHub Profile:** sshrutiigupta36-web  
 
 ## Project Overview
-This capstone project implements an end-to-end, reproducible AI-ready data engineering, visual analytics, and machine learning pipeline for **Retail Customer Churn & Revenue Analytics**. It transforms raw, noisy customer records into validated, engineered, ML-ready datasets alongside automated preprocessing pipelines and MLflow experiment tracking.
+This capstone project implements a data engineering, visual analytics, and machine learning workflow for Retail Customer Churn & Revenue Analytics. It processes raw customer records into cleaned and ML-ready datasets alongside a Scikit-Learn pipeline and MLflow experiment tracking.
+
+**Note on Dataset:** The dataset used in this project is **synthetic** and was generated for simulation and capstone demonstration purposes.
 
 ## Repository Structure
-    Customer-Churn-Analytics-Capstone/
-    ├── data/
-    │   ├── raw_data.csv             # Raw ingested customer records with missing/duplicate entries
-    │   └── ml_ready_data.csv        # Cleaned, imputed, scaled & one-hot encoded ML-ready dataset
-    ├── models/
-    │   └── trained_pipeline.pkl     # Exported Scikit-Learn ColumnTransformer + Random Forest pipeline
-    ├── notebooks/
-    │   └── Customer_Churn_Analytics_Capstone.ipynb  # Complete executable workflow notebook
-    ├── screenshots/
-    │   └── analytics_dashboard.png  # 4-panel EDA & business insights dashboard
-    └── README.md                    # Project documentation & execution instructions
+<pre>
+Customer-Churn-Analytics-Capstone/
+├── data/
+│   ├── raw_data.csv             # Raw ingested customer records
+│   └── ml_ready_data.csv        # Cleaned, imputed, scaled & one-hot encoded ML-ready dataset
+├── models/
+│   └── trained_pipeline.pkl     # Exported Scikit-Learn ColumnTransformer + Random Forest pipeline
+├── notebooks/
+│   └── Customer_Churn_Analytics_Capstone.ipynb  # Complete executable workflow notebook
+├── screenshots/
+│   └── analytics_dashboard.png  # 4-panel EDA & analytics dashboard
+├── requirements.txt             # Python dependencies
+└── README.md                    # Project documentation & execution instructions
+</pre>
+
+## Analytics Dashboard
+![Dashboard](screenshots/analytics_dashboard.png)
 
 ## Key Workflow Stages
-1. **Data Acquisition & Validation:** Automated ingestion with schema checks, duplicate detection, and missing-value auditing.
-2. **Data Cleaning & Imputation:** Duplicate removal, median imputation for numerical features, and mode imputation for categorical attributes.
-3. **Exploratory Data Analysis (EDA) & Dashboards:** Multi-panel visual dashboard analyzing churn rates across segments, spending distributions, city-wise revenue, and feature correlations.
-4. **Feature Engineering & Reusable Pipelines:** Engineered domain features (`spend_per_month_tenure`, `high_ticket_flag`) integrated into a reusable `ColumnTransformer` and `SelectKBest` pipeline.
-5. **Experiment Tracking & Model Export:** Tracked parameters, accuracy metrics, and serialized artifacts using **MLflow** and **Joblib**.
-6. **End-to-End Testing:** Verified deserialized pipeline inference on unseen test samples.
+1. **Data Acquisition & Cleaning:** Loads raw customer records, removes exact duplicates, and applies median imputation for numerical features and mode imputation for categorical attributes.
+2. **Exploratory Data Analysis (EDA) & Dashboards:** Visualizes segment churn counts, monthly spend distributions, city-wise average spend, and feature correlations.
+3. **Feature Engineering & Pipeline:** Creates features (`spend_per_month_tenure`, `high_ticket_flag`) and uses `ColumnTransformer`, `SelectKBest`, and `RandomForestClassifier`.
+4. **Experiment Tracking & Model Export:** Logs parameters, metrics, and artifacts via MLflow (`Retail_Churn_Capstone_Experiment`, run `RandomForest_Pipeline_v1`) and saves the pipeline with Joblib.
+5. **Inference Testing:** Reloads `models/trained_pipeline.pkl` and tests predictions on sample rows.
 
 ## How to Execute
-1. Clone the repository:
-   `git clone https://github.com/sshrutiigupta36-web/Customer-Churn-Analytics-Capstone.git`
-2. Install required dependencies:
-   `pip install pandas numpy scikit-learn matplotlib seaborn mlflow joblib`
+1. Clone the repository: `git clone https://github.com/sshrutiigupta36-web/Customer-Churn-Analytics-Capstone.git`
+2. Install required dependencies: `pip install -r requirements.txt`
 3. Open and run `notebooks/Customer_Churn_Analytics_Capstone.ipynb` in Google Colab or Jupyter Notebook.
